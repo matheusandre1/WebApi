@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
-using src.Models;
+using ProjectWebApi.Models;
 
-namespace src.Controllers;
+namespace ProjectWebApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -18,23 +18,23 @@ public class PessoaController : ControllerBase
     }
 
     [HttpPost]
-    public Pessoa Post([FromBody]Pessoa pessoa)
+    public Pessoa Post([FromBody] Pessoa pessoa)
     {
         return pessoa;
     }
 
     [HttpPut("{id}")]
 
-    public string Uptade([FromRoute]int id, [FromBody]Pessoa pessoa)
+    public string Uptade([FromRoute] int id, [FromBody] Pessoa pessoa)
     {
         Console.WriteLine(id);
         Console.WriteLine(pessoa);
 
-        return ($"Dados do Id {id} Atualcizado!");
+        return $"Dados do Id {id} Atualcizado!";
     }
 
     [HttpDelete("{id}")]
-    public string Delete([FromRoute]int id)
+    public string Delete([FromRoute] int id)
     {
         return $"Deletado pessoa de {id}";
 
